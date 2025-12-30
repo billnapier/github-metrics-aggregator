@@ -31,7 +31,7 @@ jobs:
 
       - name: Convert markdown to html
         run: |
-          pandoc -s pages/index.md -o pages/index.html --metadata title="File Count"
+          pandoc -s pages/index.md -o pages/index.html --metadata title="Project Wiki" --css=https://cdn.jsdelivr.net/npm/picnic@7.0.0/picnic.min.css
 
 
       - name: Setup Pages
