@@ -1,5 +1,1 @@
-Count the total number of files in the current directory and all subdirectories. Then, create a directory named 'pages' if it doesn't exist. Inside the 'pages' directory, create a file named 'index.md' and write the output in Markdown format, like this:
-
-# File Count
-
-There are **<number>** files in this repository.
+Count the total number of files in the current directory and all subdirectories. Then, create a directory named 'pages' if it doesn't exist. Inside the 'pages' directory, create a file named 'index.md' and write the output in Markdown format.
