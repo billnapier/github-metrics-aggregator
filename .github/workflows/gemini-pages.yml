@@ -26,6 +26,9 @@ jobs:
           prompt: "${{ steps.prompt.outputs.prompt }}"
           gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
 
+      - name: Setup Pandoc
+        uses: pandoc/actions/setup-pandoc@v1
+
       - name: Convert markdown to html
         run: |
           pandoc -s pages/index.md -o pages/index.html --metadata title="File Count"
