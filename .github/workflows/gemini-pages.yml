@@ -16,10 +16,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Read prompt
+        id: prompt
+        run: echo "prompt=$(cat docs/gemini-cli-prompt.txt)" >> $GITHUB_OUTPUT
+
       - name: Run Gemini CLI
         uses: google-github-actions/run-gemini-cli@main
         with:
-          prompt_file: "docs/gemini-cli-prompt.txt"
+          prompt: "${{ steps.prompt.outputs.prompt }}"
           gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Setup Pages
