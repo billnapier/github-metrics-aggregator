@@ -41,6 +41,12 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Upload generated wiki markdown
+        uses: actions/upload-artifact@v3
+        with:
+          name: gemini-generated-wiki
+          path: pages/index.md
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
