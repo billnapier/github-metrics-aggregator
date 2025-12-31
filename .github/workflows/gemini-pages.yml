@@ -19,9 +19,10 @@ jobs:
       - name: Read prompt
         id: prompt
         run: |
-          echo "prompt<<EOF" >> $GITHUB_OUTPUT
-          cat docs/gemini-cli-prompt.txt >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          echo "prompt<<EOF" >> "$GITHUB_OUTPUT"
+          cat docs/gemini-cli-prompt.txt >> "$GITHUB_OUTPUT"
+          echo >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
 
       - name: Run Gemini CLI
         uses: google-github-actions/run-gemini-cli@main
