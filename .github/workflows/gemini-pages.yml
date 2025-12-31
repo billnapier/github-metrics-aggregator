@@ -1,0 +1,49 @@
+name: Generate and Deploy Gemini Content to Pages
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Gemini CLI
+        uses: google-github-actions/run-gemini-cli@main
+        with:
+          prompt: "/wiki"
+          gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Setup Pandoc
+        uses: r-lib/actions/setup-pandoc@v2
+
+      - name: Convert markdown to html
+        run: |
+          pandoc -s pages/index.md -o pages/index.html --metadata title="Project Wiki" --css=https://cdn.simplecss.org/simple.min.css
+
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload generated wiki markdown
+        uses: actions/upload-artifact@v4
+        with:
+          name: gemini-generated-wiki
+          path: pages/index.md
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'pages'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
