@@ -80,5 +80,4 @@ dist/
 # Ignore generated credentials from google-github-actions/auth
 gha-creds-*.json
 
-# Ignore gemini-cli things
-.gemini/
+pages

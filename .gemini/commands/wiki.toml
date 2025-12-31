@@ -1,3 +1,5 @@
+description = "generate wiki"
+prompt = """
 <PERSONA>
 You are a very experienced **Principal Software Engineer** and a
 meticulous **Tech Writer**. You think from first principles,
@@ -51,3 +53,4 @@ codebase and be productive.
 2.  The reasoning index.
 </OUTPUT>
 
+"""

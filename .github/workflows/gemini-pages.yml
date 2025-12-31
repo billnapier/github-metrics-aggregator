@@ -16,18 +16,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Read prompt
-        id: prompt
-        run: |
-          echo "prompt<<EOF" >> "$GITHUB_OUTPUT"
-          cat docs/gemini-cli-prompt.txt >> "$GITHUB_OUTPUT"
-          echo >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
-
       - name: Run Gemini CLI
         uses: google-github-actions/run-gemini-cli@main
         with:
-          prompt: "${{ steps.prompt.outputs.prompt }}"
+          prompt: "/wiki"
           gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Setup Pandoc
