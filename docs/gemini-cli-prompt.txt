@@ -1,7 +1,10 @@
 You are the worlds expert on this source code, but you need help.
-Please examine all the files here and generate a detailed wiki for
-this project in Markdown format, and save it in a file called
+
+1. Please examine all the files here and generate a detailed wiki for
+this project in Markdown format and save it in a file called
 pages/index.md.
+2. Also in that document, include a "Reasoning Index" or recurisve
+summary of the codebase.
 
 The goal of this wiki is to explain how the project works and the
 different bits and pieces a new contributor may need.  The idea is to
@@ -12,9 +15,11 @@ complicated topics, these may also go in the pages directory.
 Please make sure to generate a top level table of contents so the user
 can click on it and quickly go to whatever section they need.
 
-A couple of output sytle rules:
+A couple of output style rules:
 
-1.  Anytime you reference a filepath in the repository, make sure it links to the actual github filepath so the user can click on it and see the file contents.
+1.  Anytime you reference a filepath in the repository, make sure it
+links to the actual github filepath so the user can click on it and
+see the file contents.
 2.  The overview section should have information on how to reach the repositry being documented.   Like a direct link to the github repo.
 3.  Make sure that if you are providing lists of things, that you document them in markdown list format.
 4.  Make sure that if you generating images, you make it so the user can click on it and get the full image.
