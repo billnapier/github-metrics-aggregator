@@ -23,3 +23,4 @@ see the file contents.
 2.  The overview section should have information on how to reach the repositry being documented.   Like a direct link to the github repo.
 3.  Make sure that if you are providing lists of things, that you document them in markdown list format.
 4.  Make sure that if you generating images, you make it so the user can click on it and get the full image.
+5.  All generated images must be in PNG format. Do not use SVG or other formats.
